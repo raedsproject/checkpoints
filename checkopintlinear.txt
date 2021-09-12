@@ -1,0 +1,72 @@
+ ALGORITHM arrays
+ VAR
+arr1, arr2 : ARRAY_OF INTEGER[50];
+x,i,sum,j,occ:INTEGER;
+
+BEGIN
+  Write("right down length of set1 and set2");
+  Read(x);
+  FOR i FROM 0 TO x-1 DO
+       Read(arr1[i]);
+       Read(arr2[i] ;
+  END_FOR
+  sum:=0; 
+  FOR i FROM 0 TO x-1 DO 
+     occ:=0;
+     FOR j FROM 0 TO x-1 DO 
+          IF arr1[i] = arr2[j] THEN 
+             occ++;
+          END_IF
+          IF occ = 0 THEN 
+             S+=arr1[i];
+           END_IF
+     END_FOR
+   END_FOR
+   FOR n FROM 0 TO x-1 DO 
+     occ1:=0;
+     FOR m FROM 0 TO x-1 DO 
+          IF arr2[n] = arr1[m] THEN 
+             occ1++;
+          END_IF
+          IF occ1 = 0 THEN 
+             sum+=arr2[n];
+           END_IF
+     END_FOR
+    END_FOR
+    Write ("the sum if elements is ",sum);
+END . 
+//deuxieme solution ----------------------------------------
+ALGORITHM DATA_SECOND
+VAR
+   htab : HASH_TABLE<INTEGER,INTEGER>;
+   arr1, arr2,arr3:ARRAY_OF INTEGER[50] ;
+   i,j,k, sum,count : INTEGER;
+BEGIN
+  Write("right down length of set1 and set2");
+  Read(x);
+  FOR i FROM 0 TO x-1 DO
+       Read(arr1[i]);
+       Read(arr2[i] ;
+  END_FOR
+  FOR i FROM 0 TO x-1 DO 
+       arr3[i]:=arr1[i];
+       FOR j FROM L TO 2x-1 DO 
+       arr3[j]:=arr2[i];
+       END_FOR
+  END_FOR
+  FOR k FROM 0 TO 2x-1 STEP 1  DO
+       IF (htab.lookup(arr3[]) = TRUE) THEN
+           count := htab.get(arr3[n]);
+           htab.insert(arr3[k],count+1);
+       ELSE
+           htab.insert(arr3[k],1);
+       END_IF
+   END_FOR
+  sum:=0;
+    FOR i FROM 0 TO arr3.length -1 STEP 1  DO
+       IF (htab.get(arr3[i]) =1) THEN ()
+           sum=sum + arr1[i]+count;
+       END_IF
+   END_FOR
+   Write("the sum is",S);
+END . 
