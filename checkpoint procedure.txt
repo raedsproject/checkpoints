@@ -1,0 +1,52 @@
+PROCEDURE dot_product(var v1:array ,var  v2:array)
+VAR
+i :INTEGER ; 
+    
+BEGIN
+    FOR i FROM 0 TO v1.length STEP 1  DO
+        FOR j FROM 0 TO v2.length STEP 1 DO
+        ps:=ps +(v1[i]*v2[j]) ; 
+        END_FOR
+        
+    END_FOR
+END
+PROCEDURE create(v:array)
+VAR
+     
+    FOR k FROM 0 TO 1 STEP 1  DO
+    write("donner les coordonnee de vectteur")
+    read(v[k]); 
+    read(v[k+1]);
+
+        
+    END_FOR
+BEGIN
+    set_instructions
+END
+
+
+
+ALGORITHM produit scalire 
+VAR
+k,l:INTEGER ;
+
+BEGIN
+write("right down how many couple of vector that you wanna check");
+read(n); 
+FOR i FROM 0 TO n-1 STEP 1  DO
+    createvector(v1) ;
+    createvector(v2) ;
+    FOR j FROM 0 TO j<=i STEP 1  DO
+    produit:=dot_product(v1,v2);
+    IF (produit=0) THEN
+        write("les deux vecteurs sont orthogonaux");
+    ELSE 
+        write("les deux vecteurs ne sont pas orthogonaux");
+
+    END_IF
+        
+    END_FOR
+END_FOR
+
+    
+END
